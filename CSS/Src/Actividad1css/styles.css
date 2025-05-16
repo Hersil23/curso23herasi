@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 20px;
+  font-size: 20px;
+}
+
+section div {
+  width: 30%;
+  text-align: center; /* Centra el texto */
+}
+
+p {
+  text-align: justify; /* Justifica el texto */
+}
+
+img {
+  width: 350px; /* Tamaño uniforme para todas las imágenes */
+  max-width: 100%; /* Evita que la imagen desborde en pantallas pequeñas */
+  height: auto;
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0px 4px 10px rgba(103, 235, 224, 0.3); /* Sombra azul clara */
+}
