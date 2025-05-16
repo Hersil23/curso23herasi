@@ -18,17 +18,16 @@ section {
   gap: 20px;
   font-size: 24px;
 }
+/* Centra el texto */
 section div {
   width: 30%;
-  text-align: center; /* Centra el texto */
+  text-align: center; 
 }
 p {
   text-align: justify; /* Justifica el texto */
 }
 body > section > div > img {
-  width: 350px; /* Tamaño uniforme para todas las imágenes */
-  max-width: 100%; /* Evita que la imagen desborde en pantallas pequeñas */
-  height: auto;
+  width: 300px; /* Tamaño uniforme para todas las imágenes */
   border-radius: 15px; /* Bordes redondeados */
   box-shadow: 5px 5px 20px 20px rgb(0, 255, 255);
 }
