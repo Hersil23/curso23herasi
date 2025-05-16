@@ -16,22 +16,22 @@ section {
   justify-content: space-around;
   padding: 20px;
   gap: 20px;
-  font-size: 20px;
+  font-size: 24px;
 }
-
 section div {
   width: 30%;
   text-align: center; /* Centra el texto */
 }
-
 p {
   text-align: justify; /* Justifica el texto */
 }
-
-img {
+body > section > div > img {
   width: 350px; /* Tamaño uniforme para todas las imágenes */
   max-width: 100%; /* Evita que la imagen desborde en pantallas pequeñas */
   height: auto;
   border-radius: 15px; /* Bordes redondeados */
-  box-shadow: 0px 4px 10px rgba(103, 235, 224, 0.3); /* Sombra azul clara */
+  box-shadow: 5px 5px 20px 20px rgb(0, 255, 255);
+}
+h2 {
+  margin: 0px 0px 30px 0px;
 }
