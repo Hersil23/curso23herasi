@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;700&display=swap');
 /* estilos generales */
 * {
   margin: 0;
   padding: 0;
-  font-family: "Space Grotesk", sans-serif;;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
 }
 /* estilos del nav */
 nav {
@@ -11,9 +12,48 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
+  font-weight: 700;
+  text-decoration: none;
 }
 nav ul {
   display: flex;
+  gap: 25px; /* Espacio opcional entre elementos */
   list-style: none;
-  gap: 30px; /* Espacio opcional entre elementos */
+  padding: 0;
+  margin: 0;
+}
+nav ul li a {
+  /* Quita el subrayado de los enlaces del menú de navegación */
+  text-decoration: none;
+  color: black;
+}
+nav ul li a:hover {
+  color: rgb(143, 212, 64);
+  transition: 0.3s;
+}
+main header div span {
+  color: rgb(143, 212, 64);
+}
+header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-content: center;
+}
+header img {
+  border: 7px solid rgb(143, 212, 64);
+  border-radius: 3%;
+}
+header > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+}
+header div p {
+  color: rgb(0, 0, 0);
+  
+  font-size: 18px;
+  text-align: justify;
 }
