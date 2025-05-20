@@ -18,9 +18,9 @@
         <ul>
           <li><a href="#">Inicio</a></li>
           <li><a href="#">Quien Soy</a></li>
-          <li><a href="#">Portafolio</a></li>
-          <li><a href="#">Servicios</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="#portafolio">Portafolio</a></li>
+          <li><a href="#Servicios">Servicios</a></li>
+          <li><a href="#Contacto">Contacto</a></li>
         </ul>
       </div>
     </nav>
@@ -29,14 +29,83 @@
       <header>
         <div>
         <h1>Yo<span> soy Herasi</span> Silva</h1>
-        <p>Bienvenido a mi portafolio, soy un locutor profesional con experiencia en
-          diversos estilos y géneros de locución. Aquí encontrarás una muestra de mi
-          trabajo y los servicios que ofrezco.</p>
+        <p>¿Necesitas una voz que conecte con tu audiencia y potencie tu marca?
+          <strong> Herasi Silva</strong>, locutor profesional con experiencia en 
+          diversos estilos y géneros de locución comercial. Mi objetivo es darle
+          vida a tu mensaje, haciendo que resuene con claridad, emoción 
+          y efectividad.</p>
         </div>
         <div>
         <img src="./resources/Herasi sib fondo (1).png" alt="" style="width:60%; height:auto;">
         </div>
       </header>
+        <h2 id="portafolio"> Mi portafolio </h2>
+      <section class="seccion-portafolio">
+        <div>
+          <video src="./resources/4 comerciales.mp4" style="width:50%; height:auto;" controls autoplay loop></video>
+          <h3>4 estilos</h3>
+        </div>
+        <div>
+          <video src="./resources/4 comerciales.mp4" style="width:50%; height:auto;" controls autoplay loop></video>
+          <h3>4 estilos</h3>
+        </div>
+        <div>
+          <video src="./resources/4 comerciales.mp4" style="width:50%; height:auto;" controls autoplay loop></video>
+          <h3>4 estilos</h3>
+        </div>
+      </section>
+        <h2 id="Servicios" class="Titulo">Servicios</h2>
+      <section class="seccion-servicios">
+        <div>
+          <h3>Locución Comercial</h3>
+          <p>Locución para comerciales de radio y televisión, anuncios publicitarios y
+            promociones, utilizada para transmitir mensajes de manera clara, persuasiva
+            y atractiva, on el objetivo de captar atencion del public y generar respuesta
+            inmediata, ya sea en compra o en el reconocimiento de tu marca</p>
+        </div>
+        <div>
+          <h3>Locución Institucional</h3>
+          <p>Locución para videos corporativos e institucionales, con la finalidad de 
+            transmitir confianza y solidez, en en la presentacion de su identidad, valores, 
+            productos y servicios,, las presentaciones pueden ser  educativas, empresariales 
+            o motivacionales</p>
+        </div>
+        <div>
+          <h3>Locución de Audiolibros</h3>
+          <p>Los audiolibros han ganado popularidad porque permiten disfrutar de la 
+            literatura mientras se realizan otras actividades. La locución en este 
+            formato debe ser clara, expresiva y cautivadora, manteniendo el interés 
+            del oyente a lo largo de toda la obra.</p>
+        </div>
+      </section>
+      <h2 id="Contacto" class="Titulo2">Contacto</h2>
+    <section class="seccion-contacto" >
+      <form action="#" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
     </main>
+    <!--Pie de pagina-->
+    <footer>
+      <div>
+        <h3>Redes Sociales</h3>
+        <ul>
+         <li><a href="https://www.instagram.com/@locutor.herasi/" target="_blank">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@locutor.herasi" target="_blank">TikTok</a></li>
+        </ul>
+      </div>
+  
+      <p>&copy; 2025 Locutor Herasi. Todos los derechos reservados.</p>
+    
   </body>
 </html>
