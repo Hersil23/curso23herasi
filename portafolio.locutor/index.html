@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locutor Herasi</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
     <!--Barra de navegacion-->
@@ -111,36 +112,63 @@
           <p><strong>Precio:</strong> A convenir de acuerdo a la duracion del trabajo.</p> 
         </div>
       </section>
-
-
-      <h2 id="Contacto" class="Titulo2">Contacto</h2>
-    <section class="seccion-contacto" >
-      <form action="#" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-
+      <section class="seccion-contacto" >
+        <div class="titulo-contacto">
+          <h2 id="Contacto">Contacto</h2>
+        </div>
+        <div class="formulario">
+          <div class="titulo-formulario">
+            <h3>Solicitar cotizacion</h3>
+          </div>
+          <div class="contenido-formulario">
+            <form action="https://formspree.io/f/xjkwdvlj" method="POST">
+              <div class="input" id="nombre">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" name="nombre" placeholder="Nombre Y Apellido" required>
+              </div>
+              <div class="input">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" placeholder="Correo electronico" required>
+              </div>
+              <div class="input">
+                <i class="fa-brands fa-square-whatsapp"></i>
+                <input type="number" placeholder="WhatApps" required>
+              </div>
+              <div class="input">
+                <i class="fa-solid fa-comment"></i>
+                <textarea placeholder="Mensaje" required></textarea>
+              </div>
+              <div class="button">
+                <i class="fa-solid fa-paper-plane"></i>
+              <button type="submit">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
     <!--Pie de pagina-->
     <footer>
       <div>
-        <h3>Redes Sociales</h3>
-        <ul>
-        <li><a href="https://www.instagram.com/@locutor.herasi/" target="_blank">Instagram</a></li>
-          <li><a href="https://www.tiktok.com/@locutor.herasi" target="_blank">TikTok</a></li>
-        </ul>
+      <h3>Redes Sociales</h3>
       </div>
-
-      <p>&copy; 2025 Locutor Herasi. Todos los derechos reservados.</p>
-
-  </body>
+      <ul>
+        <li>
+          <a href="https://www.tiktok.com/@locutor.herasi?is_from_webapp=1&sender_device=pc" target="_blank">
+          <i class="fa-brands fa-tiktok"></i> TikTok
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/locutor.herasi/profilecard/?igsh=MTBtMGZ6ZTl1Z3kz" target="_blank">
+          <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/+584145116337" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+        </li>
+      </ul>
+      <p>&copy; 2025 Herasi Silva. Todos los derechos reservados.</p>
+    </body>
 </html>

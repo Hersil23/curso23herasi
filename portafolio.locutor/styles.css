@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
-  text-decoration: none;
 }
 /* estilos del nav */
 nav {
@@ -12,18 +11,16 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
-  
   text-decoration: none;
 }
 nav ul {
   display: flex;
-  gap: 50px; /* Espacio opcional entre elementos */
+  gap: 50px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 nav ul li a {
-  /* Quita el subrayado de los enlaces del menú de navegación */
   text-decoration: none;
   color: black;
   font-weight: 900;
@@ -65,7 +62,6 @@ main h2 {
   padding: 30px 30px 5px 20px;
 }
 /* estilos de la sección de portafolio */
-/* Sección de portafolio */
 .seccion-portafolio {
   display: flex;
   flex-direction: column;
@@ -83,6 +79,7 @@ main h2 {
   flex-direction: column;
   align-items: center;
 }
+/* Estilos de la seccion servicios */
 .seccion-servicios {
   background: #afb973;
   padding: 20px;
@@ -104,74 +101,133 @@ main h2 {
   font-size: 24px;
 }
 .seccion-servicios p {
- text-align: justify;
- font-size: 22px;
-
- color: #0f0f07;
-
-
+  text-align: justify;
+  font-size: 22px;
+  color: #0f0f07;
 }
-
-
-
-
-
-
-
-
+/* Estilos generales para la sección de contacto */
 .seccion-contacto {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    background-color: white;
+  width: 60%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+ 
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    max-width: 400px;
-    padding: 30px;
-    background-color: #91a566;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+/* Título de contacto */
+.titulo-contacto h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #020202;
+  margin-bottom: 20px;
 }
 
-label {
-    margin-top: 10px;
-    font-weight: bold;
+/* Contenedor del formulario */
+.formulario {
+  background: #afb973;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #91a566;
-    border-radius: 5px;
+/* Título del formulario */
+.titulo-formulario h3 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #070707;
+  margin-bottom: 15px;
 }
 
-button {
-    margin-top: 15px;
-    padding: 10px;
-    background-color:#fbffe3
-  ;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+/* Estilos para los inputs */
+.input {
+  display: flex;
+  align-items: center;
+  background: #f1f1ef;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
-    background-color: #67a8ee;
+.input i {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #373837;
+}
+
+.input input, .input textarea {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* Botón de envío */
+.button {
+  text-align: center;
+}
+
+.button button {
+  background: #959690;
+  color: #020202;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button button:hover {
+  background: #e3e4dd;
 }
 
 /* estilos del footer */
 footer {
-  background-color: #fbffe3;
-  padding: 20px;
+  background-color: #afb973;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  gap: 20px;
   text-align: center;
   color: rgb(2, 2, 2);
   font-size: 18px;
+
+}
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #0c0c0c;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background: #f4f4f4;
+  transition: 0.3s ease-in-out;
+}
+
+a:hover {
+  background: #538d5b;
+  color: #fff;
 }
