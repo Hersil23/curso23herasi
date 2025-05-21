@@ -113,7 +113,7 @@ main h2 {
   padding: 20px;
   background-color: white;
   border-radius: 10px;
- 
+
 }
 
 /* Título de contacto */
@@ -177,7 +177,7 @@ textarea {
 }
 
 .button button {
-  background: #959690;
+  background: #f7f8f6;
   color: #020202;
   font-size: 18px;
   padding: 10px 20px;
@@ -188,7 +188,7 @@ textarea {
 }
 
 .button button:hover {
-  background: #e3e4dd;
+  background: rgb(81, 99, 61);
 }
 
 /* estilos del footer */
@@ -228,6 +228,6 @@ a {
 }
 
 a:hover {
-  background: #538d5b;
+  background: rgb(81, 99, 61);
   color: #fff;
 }
