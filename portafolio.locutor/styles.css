@@ -12,12 +12,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
-  font-weight: 700;
+  
   text-decoration: none;
 }
 nav ul {
   display: flex;
-  gap: 25px; /* Espacio opcional entre elementos */
+  gap: 50px; /* Espacio opcional entre elementos */
   list-style: none;
   padding: 0;
   margin: 0;
@@ -26,17 +26,18 @@ nav ul li a {
   /* Quita el subrayado de los enlaces del menú de navegación */
   text-decoration: none;
   color: black;
+  font-weight: 900;
 }
 nav ul li a:hover {
-  color: rgb(143, 212, 64);
+  color: rgb(81, 99, 61);;
   transition: 0.3s;
 }
 main header div span {
-  color: rgb(143, 212, 64);
+  color: rgb(81, 99, 61);
 }
 /* estilos del header */
 header {
-  background-color:#fbffe3;
+  background-color:#afb973;
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -44,7 +45,7 @@ header {
   align-content: center;
 }
 header img {
-  border: 7px solid rgb(143, 212, 64);
+  border: 7px solid rgb(81, 99, 61);
   border-radius: 3%;
 }
 header > div{
@@ -57,7 +58,7 @@ header > div{
 }
 header div > p {
   color: rgb(0, 0, 0);
-  font-size: 18px;
+  font-size: 24px;
   text-align: justify;
 }
 main h2 {
@@ -66,34 +67,58 @@ main h2 {
 /* estilos de la sección de portafolio */
 /* Sección de portafolio */
 .seccion-portafolio {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: nowrap;
-    padding: 20px;
-}
-.seccion-portafolio div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-.Titulo {
-  background-color: #fbffe3;
-}
-.seccion-servicios {
-  background-color: #fbffe3;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.seccion-servicios div{
   display: flex;
   flex-direction: column;
-  text-align: justify;
-  gap: 10px;
+  gap: 20px;
+  padding: 20px;
 }
+.portafolio-contenido {
+  display: flex;
+  flex-direction: row; /* Acomoda los elementos en una fila */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  gap: 20px; /* Espacio entre los elementos */
+}
+.portafolio-contenido div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.seccion-servicios {
+  background: #afb973;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.seccion-servicios div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.seccion-servicios h2 {
+  text-align: center;
+  font-size: 30px;
+}
+.seccion-servicios h3 {
+  text-align: center;
+  font-size: 24px;
+}
+.seccion-servicios p {
+ text-align: justify;
+ font-size: 22px;
+
+ color: #0f0f07;
+
+
+}
+
+
+
+
+
+
+
+
 .seccion-contacto {
     display: flex;
     justify-content: center;
