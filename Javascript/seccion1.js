@@ -20,7 +20,7 @@ let number = 42; // Número
 let float = 3.14; // Número de punto flotante
 let string = "Hola, mundo"; // Cadena de texto
 let boolean = true; // Booleano (true/false)
-let array = ['pera', 'manzana', 'naranja']; // Arreglo
+let array = ["pera","manzana","uva"]; // Arreglo
 
 let suma = 5 + 3; // Suma
 let resta = "10" - 2; // Resta
