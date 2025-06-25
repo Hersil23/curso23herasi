@@ -20,9 +20,111 @@ let number = 42; // Número
 let float = 3.14; // Número de punto flotante
 let string = "Hola, mundo"; // Cadena de texto
 let boolean = true; // Booleano (true/false)
-let array = ["pera","manzana","uva"]; // Arreglo
+let array = ["pera", "manzana", "uva"]; // Array (lista)
+console.log(array); // Imprime ["pera", "manzana", "uva"]
+console.log(array[0]); // Imprime "pera" (primer elemento del array)
+let nulo = null; // Nulo (sin valor)
+let indefinido; // Indefinido (sin asignar)
+let objeto = { nombre: "Juan", edad: 30 }; // Objeto
+console.log(objeto); // Imprime { nombre: "Juan", edad: 30 }
+console.log(objeto.nombre); // Imprime "Juan" (acceso a una propiedad del objeto)
 
+
+let suma_numeros = 5 + 3; // Suma
+let suma_string = "a10232!.;--''''-" + "2"; // Resta ()
+
+//Practica
+let prueba = "Pedro";
+prueba = 23;
+prueba = [1,2,3];
+console.log(prueba);
+
+console.log(prueba[1])
+
+//operadores aritmeticos
 let suma = 5 + 3; // Suma
-let resta = "10" - 2; // Resta
+let resta = 5 - 3; // Resta 
+let multiplicacion = 5 * 3; // Multiplicación
+let division = 5 / 3; // División
+let modulo = 5 % 3; // Módulo (resto de la división)
+let potencia = 5 ** 3; // Potencia (5 elevado a la 3ra potencia)
+console.log(suma); // Imprime 8 
+console.log(resta); // Imprime 2
+console.log(multiplicacion); // Imprime 15
+console.log(division); // Imprime 1.6666666666666667
+console.log(modulo); // Imprime 2
+console.log(potencia); // Imprime 125
 
-console.log(suma); // Imprime 8
+
+// Operadores comparativos
+/*
+  Los operadores comparativos son utilizados para comparar valores y devuelven un booleano (true/false).
+  - Igualdad: ==
+  - Desigualdad: !=
+  - Igualdad estricta: ===
+  - Desigualdad estricta: !==
+  - Mayor que: >
+  - Menor que: <
+  - Mayor o igual que: >=
+  - Menor o igual que: <=
+*/
+
+let igualdad = 5 == "5"; // Igualdad (true, porque el valor es el mismo)
+let desigualdad = 5 != "5"; // Desigualdad (false, porque el valor es el mismo)
+let igualdadEstricta = 5 === "5"; // Igualdad estricta (false, porque el tipo es diferente)
+let desigualdadEstricta = 5 !== "5"; // Desigualdad estricta (true, porque el tipo es diferente)
+let mayorQue = 5 > 3; // Mayor que (true)
+let menorQue = 5 < 3; // Menor que (false)
+let mayorOIgualQue = 5 >= 5; // Mayor o igual que (true)
+
+// Operadores lógicos
+/*  Los operadores lógicos son utilizados para combinar expresiones booleanas.
+    - AND: && 
+    - OR: ||
+    - NOT: !
+*/
+//Ejercicos para practicar la lógica
+
+// (Facil)
+var uno = !true || false; //False
+var dos = false && !false; //False
+var tres = true && !false; //True
+
+//(Medio)
+var cuatro = 5 === 5 || !true; //True
+var cinco = !0 || 5 < 0; //True
+var seis = 3 > 4 && !0; //False
+
+//Avanzado
+var siete = ((false || true) && !false && true) || (true && false); //True
+var ocho = 6 === 3 + 3 && 9 / 3 >= 3; //True
+var nueve = !!false || ("1" == 1 && !false === true); //True
+
+//Hardcore
+var diez = !!true === !!(5 >= 5); //True
+var once = !(true && !true === !!(8 === 4 * 2)); //True
+
+//Ultra-Hardcore
+var doce = !(true && !true === !!(16 === 4 * 2 + 8)) !== false; //True
+
+//Leyenda
+var trece = !(
+  (!(!(10 / 5 == "2") === false) != false) === 5 * 5 <= 100 / 4 &&
+  !(1 + 1 !== 10 / 5) !== true
+); //True
+
+//Inmortal
+var catorce = !!(
+  (
+    (10 % 3 != 1) ||
+    (typeof("10" - 5) !== "number") ||
+    !!([] && {})
+  ) &&
+  (
+    (12 * 4 === "48") ||
+    (7 <= "7" && "7" <= 7) ||
+    (Boolean(0) === Boolean("0"))
+  )
+); //verdadero
+
+console.log(catorce)
