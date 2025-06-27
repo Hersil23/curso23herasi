@@ -232,3 +232,16 @@ if (operacion === "suma") {
 } else {
   alert("Operación no válida");
 }
+
+ //2. Pidele un numero al usuario y crea un condicional que imprima si el número es par o impar.
+
+let numero3 = (prompt("Ingresa un número:"));
+if (numero3) {
+  alert("Eso no es un número válido");
+} else if (numero3 % 2 === 0) {
+  alert("El número es par");
+} else {
+  alert("El número es impar");
+}
+
+
