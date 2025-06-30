@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //declaracion
+    function semaforo(color) {
+      switch (color) {
+        case "rojo":
+          console.log("Detenerse");
+          break;
+        case "amarillo":
+          console.log("Precaución");
+          break;
+        case "verde":
+          console.log("Avanzar");
+          break;
+        default:
+          console.log("Color no válido");
+      }
+    }
+// pido datos al usuario
+    let colorSemaforo = prompt(
+      "Ingrese el color del semáforo (rojo, amarillo, verde):"
+    ).toLowerCase();
+// llamo la funcion
+    semaforo(colorSemaforo);
+  </script>
+</html>
