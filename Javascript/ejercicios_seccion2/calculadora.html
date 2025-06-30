@@ -28,10 +28,14 @@
       }
       let num1 = Number(prompt("Ingrese el primer número:"));
       let num2 = Number(prompt("Ingrese el segundo número:"));
-      let operacion = prompt(
-        "Ingrese la operación a realizar (suma, resta, multiplicación, división):"
-      ).toLowerCase();
-      calculadora(num1, num2, operacion);
+      if (isNaN(num1) || isNaN(num2)) {
+        alert("Por favor, ingrese números válidos.");
+      } else {
+        let operacion = prompt(
+          "Ingrese la operación a realizar (suma, resta, multiplicación, división):"
+        ).toLowerCase();
+        calculadora(num1, num2, operacion);
+      }
     </script>
   </body>
 </html>
