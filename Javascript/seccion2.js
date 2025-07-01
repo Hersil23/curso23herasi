@@ -1,3 +1,13 @@
+//Funciones
+/*
+  Las funciones son bloques de código que realizan una tarea específica y 
+  pueden ser reutilizadas.
+*/
+
+// Declaración de una función
+function holaMundo() {
+  console.log("¡Hola, mundo!");
+}
 
 // Llamada a la función
 holaMundo(); // Esto ejecuta la función y muestra "¡Hola, mundo!" en la consola
@@ -60,7 +70,7 @@ function saludarHoisting(nombre) {
   - Alcance local: Las variables declaradas dentro de una función solo son accesibles dentro de esa función.
 */
 
-let 
+let saludos = "¡Hola!"; // Variable global
 
 if(true) {
   var variableGlobal = "Soy global"; // Esta variable es global
@@ -69,8 +79,11 @@ if(true) {
   console.log(variableGlobal, variableLocal, constante);
 }
 
+if(true) {
+  let variableLocal = "Nuevo valor local"; // Esta variable es local y no afecta a la anterior
+  const constante = "Nueva constante"; // Esta constante es local y no afecta a la anterior
+}
 console.log(variableGlobal, variableLocal, constante);
-
 
 //Funciones con retorno
 /*
@@ -79,10 +92,13 @@ console.log(variableGlobal, variableLocal, constante);
 */
 
 function multiplicarConRetono(num1, num2) {
-  return num1 * num2; // Devuelve el resultado de la multiplicación
+  let multiplicacion = num1 * num2
+  console.log(multiplicacion)
+  return multiplicacion; // Devuelve el resultado de la multiplicación
 }
 
 console.log(multiplicarConRetono(5, 3)); // Esto muestra 15 en la consola
+let resultado = multiplicarConRetono(10, 3) + 5
 
 // Es muy distinto a
 
@@ -91,3 +107,37 @@ function multiplicarSinRetorno(num1, num2) {
 }
 
 console.log(multiplicarSinRetorno(5, 3)); // Esto muestra undefined en la consola
+console.log(multiplicarSinRetorno(10,3) + 5)
+
+//Recursion
+/*
+  La recursión es una técnica en la que una función se llama a sí misma para resolver un problema.
+  Es útil para problemas que pueden dividirse en subproblemas más pequeños.
+*/
+
+/*
+  Ejemplo: Imprimir números del 1 al 5 usando recursión
+*/
+function imprimirNumerosRecursivo(num) {
+  if (num > 5) return; // Caso base: si num es mayor que 5, termina la recursión
+  console.log(num); // Imprime el número actual
+  imprimirNumerosRecursivo(num + 1); // Llama a la función con el siguiente número
+}
+
+imprimirNumerosRecursivo(0); // Llama a la función para iniciar la recursión
+
+/*
+  Ejercicios de recursión
+
+  Nivel fácil:
+  1. Crea una función recursiva que imprima los números pares del 0 al 100.
+
+  Nivel medio:
+  2. Crea una función que reciba un array de frutas e imprima uno a uno cada fruta.
+
+  Nivel difícil:
+  3. Crea una función recursiva que calcule el factorial de un número dado.
+
+  Nivel experto:
+  4. Crea una función recursiva que imprima la sucesión de Fibonacci hasta un número dado.
+*/
