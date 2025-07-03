@@ -83,7 +83,8 @@ if(true) {
   let variableLocal = "Nuevo valor local"; // Esta variable es local y no afecta a la anterior
   const constante = "Nueva constante"; // Esta constante es local y no afecta a la anterior
 }
-console.log(variableGlobal, variableLocal, constante);
+// console.log(variableGlobal, variableLocal, constante); // variableLocal y constante no están definidas aquí
+console.log(variableGlobal); // Solo variableGlobal está disponible aquí
 
 //Funciones con retorno
 /*
@@ -140,4 +141,85 @@ imprimirNumerosRecursivo(0); // Llama a la función para iniciar la recursión
 
   Nivel experto:
   4. Crea una función recursiva que imprima la sucesión de Fibonacci hasta un número dado.
+*/
+
+ 
+// bucle for
+for (let i = 0; i < 5; i++) {
+  console.log("Iteracion " + i);
+}
+
+let motos = ["Yamaha", "Honda", "Kawasaki", "Suzuki", "Ducati"];
+// bucle for para recorrer un array
+for (let i = 0; i < motos.length; i++) {
+  console.log("La moto es " + (i + 1) + ": " + motos[i]);
+}
+
+for (let i = 2; i <= 100; i += 2) {
+  console.log(i);
+}
+
+// bucle for para imprimir números impares
+for (let i = 1; i < 100; i += 2) {
+  console.log(i);
+}
+/*
+  Ciclo for in
+  El ciclo `for...in` se utiliza para iterar sobre las propiedades enumerables de un objeto.
+  Es útil cuando necesitas acceder a las claves de un objeto.
+*/
+let persona = {
+  nombre: "Juan",
+  edad: 30,
+  ciudad: "Madrid",
+};
+
+for (let propiedad in persona) {
+  console.log(propiedad + ": " + persona[propiedad]); // Muestra cada clave y su valor
+}
+
+/*
+  Ciclo for of
+  El ciclo `for...of` se utiliza para iterar sobre los elementos de un iterable, como un array o una cadena.
+  Es útil cuando necesitas acceder a los valores de un iterable sin preocuparte por los índices.
+*/
+let canciones = ["Despacito", "Shape of You", "Blinding Lights"];
+
+for (let cancion of canciones) {
+  console.log("La canción es: " + cancion);
+}
+
+
+// Bucle while
+
+let contador = 0;
+while (contador < 5) {
+  console.log("Contador: " + contador);
+  contador++; // Incrementa el contador para evitar un bucle infinito
+}
+
+
+/*
+  Ciclo do...while
+  El ciclo `do...while` ejecuta un bloque de código al menos una vez y luego verifica la condición.
+  Es útil cuando necesitas asegurarte de que el código se ejecute al menos una vez.
+*/
+let numero = 0;
+do {
+  console.log("Número: " + numero); // Muestra el valor del número
+  numero++; // Incrementa el número
+} while (numero < 3); // Continúa mientras el número sea menor que 3
+
+/*
+  Ejercicios para practicar en clases
+  1. Segun el siguiente array de numeros, crea un bucle que imprima cada número multiplicado por 2.
+  - [1, 2, 3, 4, 5]
+  2. Según el siguiente objeto
+    {
+      verduras: ["lechuga", "pepino", "cebolla"],
+      frutas: ["manzana", "mazorca", "tomate"],
+      carnes: ["pollo", "res", "cerdo"]
+    }
+  Imprime todas las verduras.
+  3. Según el objeto anterior, imprime todas las verduras, frutas y carnes.
 */
