@@ -210,6 +210,7 @@ do {
   numero++; // Incrementa el número
 } while (numero < 3); // Continúa mientras el número sea menor que 3
 
+
 /*
   Ejercicios para practicar en clases
   1. Segun el siguiente array de numeros, crea un bucle que imprima cada número multiplicado por 2.
@@ -223,3 +224,52 @@ do {
   Imprime todas las verduras.
   3. Según el objeto anterior, imprime todas las verduras, frutas y carnes.
 */
+
+const supermercado = {
+  verduras: ["lechuga", "pepino", "cebolla"],
+  frutas: ["manzana", "mazorca", "tomate"],
+  carnes: ["pollo", "res", "cerdo"],
+};
+
+//for (let i = 0; i < supermercado.verduras.length; i++) {
+ // console.log("verduras: " + supermercado.verduras[i]);
+//}
+
+// for of
+
+// for (let verdura of supermercado.verduras) {
+//   console.log("verduras: " + verdura);
+// }
+
+// for in y for each
+for (let categoria in supermercado) {
+  supermercado[categoria].forEach((elemento) => {
+    console.log(elemento);
+  })
+}
+
+// for in for of
+
+for (let categoria in supermercado) {
+  for (let elemento of supermercado[categoria]) {
+    console.log(elemento);
+  }
+}
+
+// Ejercicio
+// Recorrer un array de arreglos y sumar sus elementos
+
+const numeros = [
+  [1, 2, 3, 0],
+  [4, 5, 6, 8],
+  [7, 8, 9, 6],
+];
+
+let suma = 0;
+for (let i = 0; i < numeros.length; i++) {
+  for (let j = 0; j < numeros[i].length; j++) {
+    suma += numeros[i][j];
+    
+  }
+}
+console.log(suma);
