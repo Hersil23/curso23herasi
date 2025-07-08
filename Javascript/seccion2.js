@@ -352,7 +352,7 @@ let palabras= "Hola, Como te va?"
 console.log (contarPalabras(palabras));
 */
 
-function contarVocales(texto) {
+/*function contarVocales(texto) {
   const vocales = ["a", "e", "i", "o", "u"];
   let contador = 0;
 
@@ -365,3 +365,27 @@ function contarVocales(texto) {
 }
 let frase = "hola, como te va?";
 console.log(contarVocales(frase));
+*/
+
+/*function contarVocales(texto) {
+  let contador = 0;
+  const vocales = ['a', 'e', 'i', 'o', 'u', ];
+  for (let vocal of texto) {
+    if (vocales.includes(vocal)) {
+      contador++;
+    }
+  }
+  return contador;
+}
+
+console.log(contarVocales("vocales")); // Resultado: 3
+console.log(contarVocales("hola, como te va?")); // Resultado: 7
+*/
+
+// 3. Crea una función que reciba un string y retorne el string al revés.
+
+function invertirTexto(texto) {
+  return texto.split("").reverse().join("");
+}
+
+console.log(invertirTexto("Hola, mundo!")); // Resultado: "!odnum ,aloH"
