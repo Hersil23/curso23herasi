@@ -72,19 +72,18 @@ function saludarHoisting(nombre) {
 
 let saludos = "¡Hola!"; // Variable global
 
-if(true) {
+if (true) {
   var variableGlobal = "Soy global"; // Esta variable es global
   let variableLocal = "Soy local"; // Esta variable es local
   const constante = "Soy constante"; // Esta constante es local
   console.log(variableGlobal, variableLocal, constante);
 }
 
-if(true) {
+if (true) {
   let variableLocal = "Nuevo valor local"; // Esta variable es local y no afecta a la anterior
   const constante = "Nueva constante"; // Esta constante es local y no afecta a la anterior
 }
-// console.log(variableGlobal, variableLocal, constante); // variableLocal y constante no están definidas aquí
-console.log(variableGlobal); // Solo variableGlobal está disponible aquí
+console.log(variableGlobal, variableLocal, constante);
 
 //Funciones con retorno
 /*
@@ -93,13 +92,13 @@ console.log(variableGlobal); // Solo variableGlobal está disponible aquí
 */
 
 function multiplicarConRetono(num1, num2) {
-  let multiplicacion = num1 * num2
-  console.log(multiplicacion)
+  let multiplicacion = num1 * num2;
+  console.log(multiplicacion);
   return multiplicacion; // Devuelve el resultado de la multiplicación
 }
 
 console.log(multiplicarConRetono(5, 3)); // Esto muestra 15 en la consola
-let resultado = multiplicarConRetono(10, 3) + 5
+let resultado = multiplicarConRetono(10, 3) + 5;
 
 // Es muy distinto a
 
@@ -108,7 +107,7 @@ function multiplicarSinRetorno(num1, num2) {
 }
 
 console.log(multiplicarSinRetorno(5, 3)); // Esto muestra undefined en la consola
-console.log(multiplicarSinRetorno(10,3) + 5)
+console.log(multiplicarSinRetorno(10, 3) + 5);
 
 //Recursion
 /*
@@ -143,26 +142,65 @@ imprimirNumerosRecursivo(0); // Llama a la función para iniciar la recursión
   4. Crea una función recursiva que imprima la sucesión de Fibonacci hasta un número dado.
 */
 
- 
-// bucle for
-for (let i = 0; i < 5; i++) {
-  console.log("Iteracion " + i);
+//1
+function imprimir_numeros(numero, limite = 2) {
+  if (numero <= limite) {
+    if (numero % 2 === 0) console.log(numero);
+    imprimir_numeros(numero + 1, limite);
+  }
 }
 
-let motos = ["Yamaha", "Honda", "Kawasaki", "Suzuki", "Ducati"];
-// bucle for para recorrer un array
-for (let i = 0; i < motos.length; i++) {
-  console.log("La moto es " + (i + 1) + ": " + motos[i]);
+imprimir_numeros(0, 100);
+
+//2
+let frutas = ["uva", "melon", "tomate", "banana", "maiz"];
+
+function imprimir_array(lista = [], numero = 0) {
+  if (numero < lista.length) {
+    console.log(lista[numero]);
+    imprimir_array(lista, numero + 1);
+  }
 }
 
-for (let i = 2; i <= 100; i += 2) {
+imprimir_array(frutas);
+
+//3
+
+function calcular_factorial(numero, acumulador = 1) {
+  if (numero >= 1) {
+    acumulador = acumulador * numero;
+    if (numero === 1) {
+      console.log("El factorial es: " + acumulador);
+      return;
+    }
+    calcular_factorial(numero - 1, acumulador);
+  } else if (numero === 0) {
+    console.log("El factorial de 0 es 1");
+    return;
+  } else {
+    console.log("Ingresa un valor valido");
+  }
+}
+
+calcular_factorial(7);
+
+/*
+  Ejercicio extra de dificultad media
+  Crea una función recursiva que basado en un array de notas, te muestre el promedio.
+*/
+
+// Loops
+/*
+  Los loops (bucles) son estructuras que permiten repetir un bloque de código varias veces.
+  Los tipos más comunes son `for`, `while` y `do...while`.
+*/
+// Bucle for
+let motos = ["Honda", "Yamaha", "Kawasaki", "Suzuki", "Ducati"];
+for (let i = 0; i <= 100; i += 5) {
+  //console.log("La moto es: " + motos[i]);
   console.log(i);
 }
 
-// bucle for para imprimir números impares
-for (let i = 1; i < 100; i += 2) {
-  console.log(i);
-}
 /*
   Ciclo for in
   El ciclo `for...in` se utiliza para iterar sobre las propiedades enumerables de un objeto.
@@ -180,24 +218,25 @@ for (let propiedad in persona) {
 
 /*
   Ciclo for of
-  El ciclo `for...of` se utiliza para iterar sobre los elementos de un iterable, como un array o una cadena.
-  Es útil cuando necesitas acceder a los valores de un iterable sin preocuparte por los índices.
+  El ciclo `for...of` se utiliza para iterar sobre los elementos de un iterable, como un array o una cadena de texto.
+  Es útil cuando necesitas acceder a los valores de un iterable.
 */
 let canciones = ["Despacito", "Shape of You", "Blinding Lights"];
-
 for (let cancion of canciones) {
-  console.log("La canción es: " + cancion);
+  console.log("Canción: " + cancion); // Muestra cada canción
 }
 
-
-// Bucle while
+/*
+  Ciclo while
+  El ciclo `while` ejecuta un bloque de código mientras una condición sea verdadera.
+  Es útil cuando no sabes cuántas veces necesitas iterar.
+*/
 
 let contador = 0;
 while (contador < 5) {
-  console.log("Contador: " + contador);
-  contador++; // Incrementa el contador para evitar un bucle infinito
+  console.log("Contador: " + contador); // Muestra el valor del contador
+  contador++; // Incrementa el contador
 }
-
 
 /*
   Ciclo do...while
@@ -209,7 +248,6 @@ do {
   console.log("Número: " + numero); // Muestra el valor del número
   numero++; // Incrementa el número
 } while (numero < 3); // Continúa mientras el número sea menor que 3
-
 
 /*
   Ejercicios para practicar en clases
@@ -231,48 +269,51 @@ const supermercado = {
   carnes: ["pollo", "res", "cerdo"],
 };
 
-//for (let i = 0; i < supermercado.verduras.length; i++) {
- // console.log("verduras: " + supermercado.verduras[i]);
-//}
-
-// for of
-
-// for (let verdura of supermercado.verduras) {
-//   console.log("verduras: " + verdura);
-// }
-
-// for in y for each
-for (let categoria in supermercado) {
-  supermercado[categoria].forEach((elemento) => {
-    console.log(elemento);
-  })
-}
-
-// for in for of
-
+// Resolución con For-in y For-of
 for (let categoria in supermercado) {
   for (let elemento of supermercado[categoria]) {
     console.log(elemento);
   }
 }
 
-// Ejercicio
-// Recorrer un array de arreglos y sumar sus elementos
+// Resolución con For-in y forEach (función de flecha)
+for (let categoria in supermercado) {
+  supermercado[categoria].forEach((elemento) => {
+    console.log(elemento);
+  });
+}
 
+/**
+ * Ejercicio 4:
+ * Segun el siguiente arreglo de arreglos (matriz), crea:
+ * - Un bucle que imprima la suma de todos los numeros.
+ * - Un bucle que imprima la suma de cada fila.
+ */
 const numeros = [
   [1, 2, 3, 0],
   [4, 5, 6, 8],
   [7, 8, 9, 6],
 ];
 
+// Suma de todos los números
 let suma = 0;
 for (let i = 0; i < numeros.length; i++) {
   for (let j = 0; j < numeros[i].length; j++) {
     suma += numeros[i][j];
-    
   }
 }
-console.log(suma);
+console.log("La suma de todos los números es: " + suma); // Usamos i para identificar la fila
+
+// Suma de cada fila
+let sumaFila = 0;
+for (let i = 0; i < numeros.length; i++) {
+  for (let j = 0; j < numeros[i].length; j++) {
+    sumaFila += numeros[i][j];
+  }
+  console.log("La suma de la fila " + i + " es: " + sumaFila);
+  sumaFila = 0;
+}
+
 /*
   Que son los prototipos y como funcionan
   Los prototipos son una característica de JavaScript que permite la herencia y la reutilización de código.
@@ -287,7 +328,6 @@ let aviones = [
 ];
 
 console.log(aviones.length);
-
 
 /*
   Metodos de strings
@@ -314,25 +354,16 @@ console.log(texto.toLowerCase()); // Convierte a minúsculas
 console.log(texto.substring(2, 10)); // Extrae una parte de la cadena
 console.log(texto.indexOf("JavaScript")); // Busca la posición de "JavaScript"
 console.log(texto.replace("JavaScript", "mundo")); // Reemplaza "JavaScript" por "mundo"
+console.log(texto.replaceAll(" ", "")); // Reemplaza todos los espacios en blanco por nada
 console.log(texto.split("a")); // Divide la cadena en un array
 console.log(texto.trim()); // Elimina los espacios en blanco al inicio y al final
 console.log(texto.includes("Hola")); // Verifica si "Hola" está presente
-console.log(texto.charAt(0)); // Devuelve el carácter en la posición 0
+console.log(texto.charAt(3)); // Devuelve el carácter en la posición 3
 console.log(texto.length); // Devuelve la longitud de la cadena
 console.log(texto.startsWith("  Hola")); // Verifica si comienza con "  Hola"
 console.log(texto.endsWith("!  ")); // Verifica si termina con "!
 console.log(texto.repeat(2)); // Repite la cadena dos veces
 console.log(texto.concat(" ¡Bienvenido!")); // Une " ¡Bienvenido!" a la cadena original
-
-
-
-
-let texto = "  Hola, JavaScript!  ";
-console.log(texto.split("a")); // Divide la cadena en un array
-
-
-
-
 
 // Ejercicios de strings
 /*
@@ -340,52 +371,81 @@ console.log(texto.split("a")); // Divide la cadena en un array
   2. Crea una función que reciba un string y cuente cuantas vocales tiene
   3. Crea una función que reciba un string y retorne el string al revés.
   4. Crea una función que reciba un string y retorne si este es un palíndromo o no.
-
 */
 
-
-/*function contarPalabras(texto) {
-  const palabras = texto.trim().split(" ")
-  return palabras.length;
+//1
+function contar_palabras(texto) {
+  return texto.trim().split(" ").length;
 }
-let palabras= "Hola, Como te va?"
-console.log (contarPalabras(palabras));
-*/
 
-/*function contarVocales(texto) {
-  const vocales = ["a", "e", "i", "o", "u"];
-  let contador = 0;
+console.log(contar_palabras("Hola a todos en la clase"));
 
-  for (let i = 0; i < texto.length; i++) {
-    if (vocales.includes(texto[i])){
-      contador++;
-    }
-  }
-  return contador;
-}
-let frase = "hola, como te va?";
-console.log(contarVocales(frase));
-*/
-
-/*function contarVocales(texto) {
-  let contador = 0;
-  const vocales = ['a', 'e', 'i', 'o', 'u', ];
-  for (let vocal of texto) {
-    if (vocales.includes(vocal)) {
+//2
+function contar_vocales(texto) {
+  contador = 0;
+  for (let letra of texto.toLowerCase()) {
+    if ("aeiouáéíóú".includes(letra)) {
       contador++;
     }
   }
   return contador;
 }
 
-console.log(contarVocales("vocales")); // Resultado: 3
-console.log(contarVocales("hola, como te va?")); // Resultado: 7
-*/
+console.log(contar_vocales("Este mensaje es Supercalifragilisticoexpialidoso"));
 
-// 3. Crea una función que reciba un string y retorne el string al revés.
-
-function invertirTexto(texto) {
-  return texto.split("").reverse().join("");
+//3
+function invertir_texto(texto) {
+  let palabraInvertida = "";
+  for (let i = texto.length - 1; i >= 0; i--) {
+    palabraInvertida += texto[i];
+    //palabraInvertida = palabraInvertida + texto[i]
+  }
+  return palabraInvertida;
 }
 
-console.log(invertirTexto("Hola, mundo!")); // Resultado: "!odnum ,aloH"
+console.log(invertir_texto("Yo soy tu padre"));
+
+//4
+function verificar_palindromo(texto) {
+  let acentos = ["á", "é", "í", "ó", "ú"];
+  let vocales = ["a", "e", "i", "o", "u"];
+  for (let i = 0; i < acentos.length; i++) {
+    texto = texto.toLowerCase().replaceAll(acentos[i], vocales[i]);
+    console.log("Remplazando acentos", texto)
+  }
+  texto = texto.replaceAll(" ", "").replaceAll(",", "").replaceAll(".","");
+  console.log("Replazandos ',', ' ', '.'", texto)
+  if (texto === invertir_texto(texto)) {
+    console.log("Es un palindromo");
+  } else {
+    console.log("No es un palindromo");
+  }
+}
+
+verificar_palindromo("A ti no, bonita.")
+
+//Metodos de arrays
+/*
+  Los métodos de arrays son funciones que se pueden aplicar a arrays para realizar diversas operaciones.
+  Algunos de los métodos más comunes son:
+  - `push()`: Agrega uno o más elementos al final del array.
+  - `pop()`: Elimina el último elemento del array y lo devuelve.
+  - `shift()`: Elimina el primer elemento del array y lo devuelve.
+  - `unshift()`: Agrega uno o más elementos al inicio del array.
+  - `splice()`: Cambia el contenido de un array eliminando o reemplazando elementos existentes y/o agregando nuevos elementos en su lugar.
+  - `slice()`: Devuelve una copia superficial de una porción del array dentro de un nuevo array.
+  - `forEach()`: Ejecuta una función proporcionada una vez por cada elemento del array.
+  - `map()`: Crea un nuevo array con los resultados de la llamada a la función proporcionada en cada elemento del array.
+  - `filter()`: Crea un nuevo array con todos los elementos que cumplan la condición implementada por la función proporcionada.
+  - `reduce()`: Aplica una función contra un acumulador y cada valor del array (de izquierda a derecha) para reducirlo a un único valor.
+  - `find()`: Devuelve el primer elemento del array que cumple con la condición proporcionada en la función.
+  - `includes()`: Verifica si un elemento está presente en el array.
+*/
+let frutasArray = ["melon", "tomate", "banana", "manzana", "pera"];
+frutasArray.push("uva"); // Agrega "uva" al final del array
+frutasArray.pop(); // Elimina el último elemento y lo devuelve
+frutasArray.shift(); // Elimina el primer elemento y lo devuelve
+frutasArray.unshift("fresa");   // Agrega "fresa" al inicio del array
+frutasArray.splice(2, 1, "Kiwi"); // Elimina el elemento en el índice 2 y agrega "kiwi"
+let nuevoArray = frutasArray.slice(1, 4); // Crea un nuevo array con los elementos del índice 1 al 3
+
