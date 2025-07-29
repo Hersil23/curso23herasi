@@ -31,3 +31,16 @@ o// /patron/modificador
   i   -> Ignorar mayúsculas y minúsculas
 */
 let regexNombre = /^[A-Z][a-z]+ [A-Z][a-z]+$/;
+
+/*
+  Busca expresiones regulares para validar
+  - Una cedula
+  - Un correo
+  - Una contraseña
+*/
+let regexCedula = /^\d{3}-\d{7}-\d{1}$/;
+let regexCorreo = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+let regexContrasena = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+// Validar nombre
+if (regexNombre.test(nombre))
+  
