@@ -1,0 +1,28 @@
+CREATE DATABASE youtube_clone WITH ENCODING 'UTF8';
+
+/*CREAR TABLAS*/
+
+CREATE TABLE usuarios (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nombre_usuario VARCHAR(50) UNIQUE NOT NULL,
+    correo_electronico VARCHAR(100) UNIQUE NOT NULL,
+    contrasena VARCHAR(255) NOT NULL,
+    fecha_nacimiento DATE,
+    numero_telefono VARCHAR(15),
+    pais VARCHAR(50),
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE videos (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    titulo VARCHAR(200) NOT NULL,
+    descripcion TEXT,
+    url_video VARCHAR(255) UNIQUE NOT NULL,
+    url_miniatura VARCHAR(255),
+    duracion FLOAT NOT NULL,
+    id_usuario BIGINT NOT NULL,
+    fecha_subida TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE
+);
