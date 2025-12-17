@@ -12,7 +12,6 @@ mongoose.plugin(mongoosePaginate);
  * deleted: indicador de borrado lógico
  * deleted_at: fecha de borrado lógico
  * Timestamps: createdAt y updatedAt automáticos
- * Autor: Juan Rodriguez
  */
 const userSchema = new mongoose.Schema({
     name: {
