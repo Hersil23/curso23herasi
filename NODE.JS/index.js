@@ -61,7 +61,7 @@ app.get('/', (req, res) => {
     res.send('Bienvenido a la API con Express');
 });
 
-app.post('/api/usuarios', async (req, res) => {
+app.post('/api/users', async (req, res) => {
     try {
         const nuevoUsuario = new User(req.body);
         await nuevoUsuario.save();
@@ -70,12 +70,70 @@ app.post('/api/usuarios', async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 });
+// Ruta para obtener todos los usuarios
+app.get('/api/users', async (req, res) => {
+    try {
+        const usuarios = await User.find({ deleted: false });
+        res.json(usuarios);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
-
+//Ruta para traer a un solo usuario por ID
+app.get('/api/users/:id', async (req, res) => {
+    try {
+        const usuario = await User.findById(req.params.id);
+        if (!usuario || usuario.deleted) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+        res.json(usuario);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 app.get('/api/saludo', (req, res) => {
     res.json({ mensaje: 'Hola desde la API!' });
 });
 
+//Borrar un usuario (soft delete)
+app.delete('/api/users/:id', async (req, res) => {
+    try {
+        const usuario = await User.findById(req.params.id);
+        if (!usuario || usuario.deleted) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+        usuario.deleted = true;
+        usuario.deleted_at = new Date();
+        await usuario.save();
+        res.json({ message: 'Usuario eliminado exitosamente' });
+    } catch (error) {
+        //en caso de no poder transformar el id a un ObjectId valido
+        if (error.kind === 'ObjectId') {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+        res.status(500).json({ error: error.message });
+    }
+});
+
+//Ruta para actualizar un usuario
+app.patch('/api/users/:id', async (req, res) => {
+    try {
+        const usuario = await User.findById(req.params.id);
+        if (!usuario || usuario.deleted) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+        Object.assign(usuario, req.body);
+        await usuario.save();
+        res.json({ message: 'Usuario actualizado exitosamente', user: usuario });
+    } catch (error) {
+        //en caso de no poder transformar el id a un ObjectId valido
+        if (error.kind === 'ObjectId') {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+        res.status(400).json({ error: error.message });
+    }
+});
 //Ruta con parametros
 app.get('/api/usuario/:nombre', (req, res) => {
     const nombre = req.params.nombre;
